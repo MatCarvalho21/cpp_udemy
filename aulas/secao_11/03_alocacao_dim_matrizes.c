@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <iostream>
-#include <string>
-#include <new>
-
-using namespace std;
 
 int main(){
     // definindo variáveis
@@ -13,11 +8,11 @@ int main(){
     int **matriz;
 
     // alocando memórias para as linhas 
-    matriz = (int **) new int(linhas);
+    matriz = (int **) malloc(linhas * sizeof(int *));
 
     // alocando memórias para cada coluna
     for(int i = 0; i < linhas; i++){
-        matriz[i] = (int *) new int(colunas);
+        matriz[i] = (int *) malloc(colunas * sizeof(int));
     }
 
     for(int i = 0; i < linhas; i++){
@@ -27,4 +22,7 @@ int main(){
         }
         printf("\n");
     }
+
+    // liberando o espaço da memória
+    free(matriz);
 }
