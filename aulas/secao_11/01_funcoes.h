@@ -1,0 +1,3 @@
+void printaOI(){
+    printf("\nOI"); 
+}
