@@ -14,10 +14,12 @@ int main(){
 
     // sem ponteiro
     a = retornaQuadrado(a);
+    cout << a << "\n";
 
     // com ponteiro
     elevaAoQuadrado(&a);
-
+    cout << a;
+    
     /*
     note que não foi necessário uma atribuição
     foi passado um endereço na memória e a função
