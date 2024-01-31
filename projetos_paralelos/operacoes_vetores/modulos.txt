@@ -1,0 +1,6 @@
+Esse é o comando necessário para executar os dois arquivos
+de uma vez. Ao tentar compilar apenas o main, não foi possível
+importar funções de outro arquivo. 
+
+gcc -o app "file_1.c" "file_2.c" 
+./app
