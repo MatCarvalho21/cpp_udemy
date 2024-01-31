@@ -43,6 +43,7 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "fun_vetores.h": "c"
+        "fun_vetores.h": "c",
+        "stdlib.h": "c"
     }
 }
