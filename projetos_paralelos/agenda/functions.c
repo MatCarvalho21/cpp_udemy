@@ -66,3 +66,32 @@ void printaContatos(contato *listaDeContatos, int contador){
         printf("\nTelefone: %s\n", listaDeContatos[i].telefone);
     }
 }
+
+int removeContato(contato *listaDeContatos, int *contador){
+    bool teste = true;
+    int opcao;
+
+    limpadorTerminal();
+    while(teste){
+        printaContatos(listaDeContatos, *contador);
+        printf("\nDigite o número do contato que você deseja remover: ");
+        scanf("%d", &opcao);
+        if (opcao >= 0 && opcao <= *contador){
+            teste = false;
+
+            for (int i = opcao - 1; i < *contador; i++){
+                listaDeContatos[i] = listaDeContatos[i + 1];
+            }
+
+            limpadorTerminal();
+            printf("CONTATO REMOVIDO COM SUCESSO\n\n");
+
+        } else{
+            limpadorTerminal();
+            printf("SELECIONE UMA OPÇÃO VÁLIDA\n\n");
+        }
+
+    }
+
+    return *contador - 1;
+}

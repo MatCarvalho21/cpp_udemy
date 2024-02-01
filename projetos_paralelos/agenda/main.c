@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "functions.h"
+#include <locale.h>
 
 int main(){
+    setlocale(LC_ALL, "");
     bool teste = true;
     int counter = 0;
 
@@ -28,6 +30,8 @@ int main(){
 
             // REMOVER CONTATO
             case 2:
+                limpadorTerminal();
+                counter = removeContato(listaDeContatos, &counter);
                 break;
 
             // CONSULTAR CONTATO
