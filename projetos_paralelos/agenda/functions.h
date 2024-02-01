@@ -1,5 +1,5 @@
-#ifndef FUNCTIONS
-#define FUNCTIONS
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
 typedef struct Contato{
     char primeiroNome[255];

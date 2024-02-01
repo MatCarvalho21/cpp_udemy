@@ -4,17 +4,18 @@
 #include "functions.h"
 #include <locale.h>
 
+#define MAX_CONTATOS 60
+
 int main(){
     setlocale(LC_ALL, "");
     bool teste = true;
     int counter = 0;
+    contato listaDeContatos[MAX_CONTATOS];
 
     limpadorTerminal();
     while(teste){
         // vai exibir os serviços no terminal
         itensMenu();
-
-        contato listaDeContatos[60];
 
         // o usuário vai selecionar uma das opções
         int opcao;
