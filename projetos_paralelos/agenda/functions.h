@@ -11,5 +11,6 @@ typedef struct Contato{
 void limpadorTerminal();
 void itensMenu();
 int adicionaContato(contato *listaDeContatos, int *contador);
+void printaContatos(contato *listaDeContatos, int contador);
 
 #endif

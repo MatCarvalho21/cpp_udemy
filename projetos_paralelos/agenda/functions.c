@@ -9,7 +9,7 @@ void limpadorTerminal(){
 }
 
 void itensMenu(){
-    printf("AGENDA TELEFÔNICA\n\n");
+    printf("\nAGENDA TELEFÔNICA\n\n");
     printf("1 - Adicionar Contato;\n");
     printf("2 - Remover Contato;\n");
     printf("3 - Consultar Contato;\n");
@@ -55,5 +55,14 @@ int adicionaContato(contato *listaDeContatos, int *contador){
         printf("CONTATO ADICIONADO COM SUCESSO\n\n");
 
         return *contador + 1;
+    }
+}
+
+void printaContatos(contato *listaDeContatos, int contador){
+    for (int i = 0; i < contador; i++){
+        printf("\nCONTATO %d ", i + 1);
+        printf("\nNome Completo: %s %s", listaDeContatos[i].primeiroNome, listaDeContatos[i].ultimoNome);
+        printf("\nEmail: %s", listaDeContatos[i].email);
+        printf("\nTelefone: %s\n", listaDeContatos[i].telefone);
     }
 }

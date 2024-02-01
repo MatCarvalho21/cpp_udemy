@@ -33,9 +33,7 @@ int main(){
             // CONSULTAR CONTATO
             case 3:
                 limpadorTerminal();
-                for (int i = 0; i <= counter; i++){
-                    printf("\n%s\n", listaDeContatos[i].primeiroNome);
-                }
+                printaContatos(listaDeContatos, counter);
                 break;
 
             // SAIR DA AGENDA
