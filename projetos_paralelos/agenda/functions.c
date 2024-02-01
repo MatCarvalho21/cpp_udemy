@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "functions.h"
+#include <string.h>
 
 void limpadorTerminal(){
     system("cls");
@@ -16,43 +17,43 @@ void itensMenu(){
     printf("Selecione uma das opções: ");
 }
 
-void adicionaContato(contato *listaDeContatos, int *contador){
+int adicionaContato(contato *listaDeContatos, int *contador){
     if (*contador == 60){
         printf("CONTATO NÃO PÔDE SER ADICIONADO, POIS O LIMITE FOI ATINGIDO.");
     } else{
-        char nome[255], sobrenome[255], email[255], telefone[255];
+        char nome_[255], sobrenome_[255], email_[255], telefone_[255];
 
         limpadorTerminal();
         printf("Insira o primeiro nome do contato: ");
         setbuf(stdin, 0);
-        fgets(nome, 255, stdin);
-        nome[strlen(nome) - 1] = '\0';
-        *listaDeContatos[*contador].primeiroNone = nome;
+        fgets(nome_, 255, stdin);
+        nome_[strlen(nome_) - 1] = '\0';
+        strcpy(listaDeContatos[*contador].primeiroNome, nome_);
 
         limpadorTerminal();
         printf("Insira o último nome do contato: ");
         setbuf(stdin, 0);
-        fgets(sobrenome, 255, stdin);
-        sobrenome[strlen(sobrenome) - 1] = '\0';
-        *listaDeContatos[*contador].ultimoNone = nome;
+        fgets(sobrenome_, 255, stdin);
+        sobrenome_[strlen(sobrenome_) - 1] = '\0';
+        strcpy(listaDeContatos[*contador].ultimoNome, sobrenome_);
 
         limpadorTerminal();
         printf("Insira o email do contato: ");
         setbuf(stdin, 0);
-        fgets(email, 255, stdin);
-        email[strlen(email) - 1] = '\0';
-        *listaDeContatos[*contador].email = nome;
+        fgets(email_, 255, stdin);
+        email_[strlen(email_) - 1] = '\0';
+        strcpy(listaDeContatos[*contador].email, email_);
 
         limpadorTerminal();
         printf("Insira o telefone do contato: ");
         setbuf(stdin, 0);
-        fgets(telefone, 255, stdin);
-        telefone[strlen(telefone) - 1] = '\0';
-        *listaDeContatos[*contador].telefone = nome;
+        fgets(telefone_, 255, stdin);
+        telefone_[strlen(telefone_) - 1] = '\0';
+        strcpy(listaDeContatos[*contador].telefone, telefone_);
 
         limpadorTerminal();
         printf("CONTATO ADICIONADO COM SUCESSO\n\n");
 
-        *contador++;
+        return *contador + 1;
     }
 }

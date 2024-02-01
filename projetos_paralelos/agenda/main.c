@@ -4,14 +4,14 @@
 #include "functions.h"
 
 int main(){
-    bool *teste = true;
+    bool teste = true;
+    int counter = 0;
 
     limpadorTerminal();
     while(teste){
         // vai exibir os serviços no terminal
         itensMenu();
 
-        int counter = 0;
         contato listaDeContatos[60];
 
         // o usuário vai selecionar uma das opções
@@ -23,7 +23,7 @@ int main(){
             // ADICIONAR CONTATO
             case 1:
                 limpadorTerminal();
-                adicionaContato(listaDeContatos, &counter);
+                counter = adicionaContato(listaDeContatos, &counter);
                 break;
 
             // REMOVER CONTATO
@@ -32,6 +32,10 @@ int main(){
 
             // CONSULTAR CONTATO
             case 3:
+                limpadorTerminal();
+                for (int i = 0; i <= counter; i++){
+                    printf("\n%s\n", listaDeContatos[i].primeiroNome);
+                }
                 break;
 
             // SAIR DA AGENDA
@@ -46,7 +50,6 @@ int main(){
                 printf("SELECIONE UMA OPÇÃO VÁLIDA\n\n");
                 break;
         }
-
 
     }
 }
