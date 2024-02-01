@@ -10,7 +10,10 @@ int main(){
     while(teste){
         // vai exibir os serviços no terminal
         itensMenu();
-        
+
+        int counter = 0;
+        contato listaDeContatos[60];
+
         // o usuário vai selecionar uma das opções
         int opcao;
         scanf("%d", &opcao);
@@ -19,6 +22,8 @@ int main(){
 
             // ADICIONAR CONTATO
             case 1:
+                limpadorTerminal();
+                adicionaContato(listaDeContatos, &counter);
                 break;
 
             // REMOVER CONTATO
